@@ -1,9 +1,13 @@
-# Verifier smoke fixture: 3-SAT
+# OpenAI's 3-SAT proof, ported for the Big O Speedrun verifier
 
-This repository exists only for the maintainer smoke test of the `3sat` profile of
-https://github.com/bigospeedrun/verifier (board: https://bigospeedrun.com/3sat).
-It is test data for the verifier. It is not a claim, not a submission and not a new result.
-The board credits OpenAI's row as it is.
+This branch (`port-openai`) is the port of OpenAI's Lean proof that the Big O Speedrun maintainers
+submit to https://github.com/bigospeedrun/verifier for the `3sat` board
+(https://bigospeedrun.com/3sat). Its purpose is the Lean Verified evidence level for OpenAI's
+existing row (bound 1/2). The result is OpenAI's, and the row credits OpenAI alone. Big O Speedrun
+shows only as "Ported by Big O Speedrun". This branch is not a new result.
+
+The proof files are the same as on `main`, the maintainer smoke fixture that passed the verifier's
+check chain (verifier issue #195). Only this README is different.
 
 ## Source
 
@@ -23,7 +27,7 @@ The proof is OpenAI's: https://github.com/openai/math at commit
   form of the statement (the trace projection, `0 < count ↔ satisfiable`, and the time bound
   comparison).
 
-Branches other than `main` hold the control (the statement with `sorry`) and statement mutations,
-each of which the verifier must refuse.
+Other branches hold the maintainer smoke fixture (`main`), the control (the statement with `sorry`)
+and statement mutations, each of which the verifier must refuse.
 
-The repository holds no secrets and no workflows. It is archived (read-only) after the smoke passes.
+The repository holds no secrets and no workflows.
